@@ -34,7 +34,7 @@ jobs:
         run: echo 'NEXT_PUBLIC_BASE_PATH="/<repository-name>"' >> .env.local
 
       - name: Build Next.js app
-        run: npm run build && npm run export
+        run: npm run build 
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
