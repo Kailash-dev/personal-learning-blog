@@ -1,5 +1,4 @@
 "use client"
-// app/blog/javascript/[slug]/page.tsx
 import { useParams } from "next/navigation";
 import { Suspense, lazy } from "react";
 
@@ -7,19 +6,10 @@ import { Suspense, lazy } from "react";
 const articles: { [key: string]: React.LazyExoticComponent<React.ComponentType<unknown>> } = {
   "macro-task": lazy(() => import("@/app/blog/javascript/articles/macro-task")),
   "micro-task": lazy(() => import("@/app/blog/javascript/articles/micro-task")),
+//   "event-loop": lazy(() => import("@/app/blog/javascript/articles/event-loop")),
+//   "promise-queue": lazy(() => import("@/app/blog/javascript/articles/promise-queue")),
   // Add other articles here as you expand
 };
-
-// Define generateStaticParams for static export
-export async function generateStaticParams() {
-  // You need to return all possible slugs for the articles here
-  // This could be fetched from a file, CMS, or database
-  const slugs = ["macro-task", "micro-task"]; // Replace this with actual data fetching logic
-
-  return slugs.map(slug => ({
-    slug,
-  }));
-}
 
 const ArticlePage = () => {
   const { slug } = useParams(); // Get the slug from the URL
