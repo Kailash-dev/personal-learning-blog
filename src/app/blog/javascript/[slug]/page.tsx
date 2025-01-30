@@ -1,3 +1,4 @@
+"use client"
 // app/blog/javascript/[slug]/page.tsx
 import { useParams } from "next/navigation";
 import { Suspense, lazy } from "react";
