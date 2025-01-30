@@ -1,8 +1,9 @@
 'use client'; // This is a client-side component
 
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Sun, Moon, User } from "lucide-react";
+
+
 
 interface BlogLayoutProps {
   children: React.ReactNode; // Dynamic content (article content)
@@ -15,25 +16,19 @@ export default function BlogLayout({
   blogCategory,
   articles
 }: BlogLayoutProps) {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  
 
-  // Load theme from localStorage
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") as "light" | "dark";
-    if (storedTheme) {
-      setTheme(storedTheme);
-      document.body.classList.add(storedTheme); // Add theme class to body
-    }
-  }, []);
+  // // Load theme from localStorage
+  // useEffect(() => {
+  //   const storedTheme = localStorage.getItem("theme") as "light" | "dark";
+  //   if (storedTheme) {
+  //     setTheme(storedTheme);
+  //     document.body.classList.add(storedTheme); // Add theme class to body
+  //   }
+  // }, []);
 
   // Toggle theme and update localStorage
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.body.classList.remove(theme);
-    document.body.classList.add(newTheme); // Update body theme class
-  };
+
 
   return (
     // <html lang="en">
